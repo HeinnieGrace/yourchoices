@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1 id="liveh1">Some text</h1>
+  <select id="selecth1FontFamily" name="selectFontFamily" onchange="updateh1family();">
+    <option> Serif </option>
+    <option> Arial </option>
+    <option> Sans-Serif </option>                                  
+    <option> Tahoma </option>
+    <option> Verdana </option>
+    <option> Lucida Sans Unicode </option>                               
+  </select>
+    <script>
+      function updateh1family() {
+        var selector = document.getElementById('selecth1FontFamily');
+        var family = selector.options[selector.selectedIndex].value;
+        var h1 = document.getElementById('liveh1')
+        h1.style.fontFamily = family;        
+      }
+
+    </script>
+</body>
+</html>

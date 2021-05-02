@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="aboutus.css">
+	<link rel="stylesheet" type="text/css" href="contactus.css">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="shortcut icon" href="logo.png">
+	<title>Customize</title>
+
+	<script type="text/javascript">
+		// Change Background Color
+				function changer(value){
+			var canvas = document.getElementById("canvas");
+			if(value==1){
+				canvas.style.backgroundImage="url(4f4a6e.jpg)";
+			}
+			else if(value==2){
+				canvas.style.backgroundImage="url(242a29.jpg)";
+			}
+			else if(value==3){
+				canvas.style.backgroundImage="url(929cb0.jpg)";
+			}
+			else if(value==4){
+				canvas.style.backgroundImage="url(e8daed.jpg)";
+			}
+			canvas.style.opacity="0.5";
+		}
+		// Local Storage
+		function previewButto (){
+			var storage = document.getElementById("storage");
+			var text = document.getElementById("text");
+
+			localStorage.setItem("storage", storage.value);
+			localStorage.setItem("text", text.value);
+			alert("All the information can be preview");
+		}
+		// const storageInput = document.querySelector('.storage');
+		// const text = document.querySelector('.text');
+		// const button = document.querySelector('.button');
+
+		// storageInput.addEventListener('input', letter => {
+		// 	console.log(letter.target.value)
+		// 	text.textContent = letter.target.value
+		// })
+	</script>
+</head>
+<body>
+<!-- Logo --> 
+	<div claas="toplogo">
+	<marquee direction="right" behavior="alternate">
+	<a class="logo"><img src="logo.png" width="100px"></a>
+	</marquee>
+
+<!-- Navigation Bar -->
+<nav>
+	</div>
+	<div class="topnav">
+		<a href="index.html" class="Home">Home</a>
+		<a href="aboutus.html" class="about">About Us</a>
+		<a href="contactus.html" class="contact">Contact Us</a>
+	</div>
+</nav>
+<p>Background Color</p>
+	<select onchange="changer(this.value)">
+		<option value="0">Please select</option>
+		<option value="1">Color 1</option>
+		<option value="2">Color 2</option>
+		<option value="3">Color 3</option>
+		<option value="4">Color 4</option>
+	</select>
+<main>
+<div id="canvas">
+	<input class="storage" type="text" name="">
+	<p class="text">Text</p>
+	<button class="previewButton">Save</button>
+</div>
+</main>
+<!-- Footer -->
+<footer>
+	<marquee direction="right" behavior="alternate">
+	<br>
+CopyRight©YourChoice2021
+</marquee>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="aboutus.css">
+	<link rel="stylesheet" type="text/css" href="contactus.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="shortcut icon" href="logo.png">
+	<title>Save Your Work</title>
+	<style type="text/css">
+		body{
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			grid-template-areas: 
+				"header main";
+			margin: 0;
+			overflow: scroll;
+			font-family: serif;
+		}
+		header {
+			grid-area: header;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			background-color: darkgrey;
+			flex-direction: column;
+			align-items: center;
+			font-size: 1em;
+		}
+		#logo {
+			height: 150px;
+			width: 150px;
+			margin-top: 25px;
+			border: 1px solid;
+		}
+		header a {
+			text-decoration: none;
+			border: 1px solid #8774a4;
+			color: white;
+			background-color: #8774a4;
+			width: 90px;
+			text-align: center;
+			padding: 10px 0;
+			margin: 5px 0;
+		}
+		header a:hover {
+			background-color: #e8daed;
+			border: 1px solid #e8daed;
+			color: black;
+		}
+		#home {
+			margin-top: 30px !important;
+		}
+		main {
+			grid-area: main;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			background-color: lightgrey;
+			padding: 60px;
+		}
+		#preview {
+			background: url(bgrad1.jpeg);
+  			background-repeat: no-repeat;
+  			background-size: 500px;
+			width: 500px;
+			height: 700px;
+			border: 1px solid;
+			margin-right: 20px;
+			background-color: white;
+			text-align: center;
+			padding: 75px;
+
+
+		}
+		aside{
+			border: 1px solid white;
+			border-radius: 10px;
+			background-color: white;
+			padding: 10px 25px 10px 25px;
+			height: 230px;
+			width: 180px;
+			font-size: 1.2em;
+		}
+		aside button {
+			background-color: lightgrey;
+			font: 1.2em serif;
+			border: 1px solid #8774a4;
+			color: white;
+			background-color: #8774a4;
+			padding: 5px 20px;
+			border-radius: 5px;
+		}
+		aside button:hover {
+			background-color: lightgrey;
+			border: 1px solid lightgrey;
+			color: black;
+		}
+		aside button:active {
+			background-color: #e8daed;
+			border: 1px solid #e8daed;
+		}
+		label {
+			line-height: 30px;
+		}
+		.fill{
+			color: white;
+			font-weight: bold;
+			text-align: left;
+		}
+		
+		.container{
+			margin: 0;
+			padding: 0;
+			display: flex;
+  			justify-content: center;
+  			align-items: center;
+  		}
+  		input, button {
+  			display: block;
+  			margin: 0 auto;
+  			text-align: center;
+  		}
+
+
+	</style>
+	<script type="text/javascript">
+		function loadMe(){
+			var recipient = document.getElementById("receipient");
+			var event = document.getElementById("event");
+			var content = document.getElementById("content");
+			var day = document.getElementById("day");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var venue = document.getElementById("venue");
+
+			 receipient.value = localStorage.getItem("receipient");
+			 event.value = localStorage.getItem("event");
+			 content.value = localStorage.getItem("content");
+			 day.value = localStorage.getItem("day");
+			 date.value = localStorage.getItem("date");
+			 time.value = localStorage.getItem("time");
+			 venue.value = localStorage.getItem("venue");
+		}
+
+		function fillin(){
+			canvas.innerHTML = localStorage.getItem("canvas");
+			receipient.innerHTML = localStorage.getItem("receipient");
+			event.innerHTML = localStorage.getItem("event");
+			content.innerHTML = localStorage.getItem("content");
+			day.innerHTML = localStorage.getItem("day");
+			date.innerHTML = localStorage.getItem("date");
+			time.innerHTML = localStorage.getItem("time");
+			venue.innerHTML = localStorage.getItem("venue");
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<img a href="index.html" id="logo" src="logo.png">
+		<a id="home" href="index.html">Home</a>
+		<a href="aboutus.html">About Us</a>
+		<a href="contactus.html">Contact</a>
+	</header>
+	<main>
+		<div class="container">
+		<div id="preview">
+	<div class="fill"><input id="receipient" type="text" placeholder="Your Name" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="event" type="text" placeholder="The Name of Event" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="content" type="text" placeholder="Details of the Event" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="day" type="text" placeholder="Insert Day" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="date" type="text" placeholder="Insert Date" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="time" type="text" placeholder="Insert Time (AM/PM)" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="venue" type="text" placeholder="Address" size="17"></div>
+	<br>
+	<br>
+		<button onclick="loadMe()">Load</button>
+		</div><!-- local storage -->
+		<aside>
+			<p>Save your work as:</p>
+			<input type="radio" name="saveAs" id="pdf">
+				<label for="pdf">PDF</label>
+				<br>
+			<input type="radio" name="saveAs" id="png">
+				<label for="png">PNG</label>
+				<br>
+			<input type="radio" name="saveAs" id="jpg">
+				<label for="jpg">JPG</label>
+			<br><br>
+			<a href="finish_bgrad1.html"><button>Download</button></a>
+		</aside>
+	</div>
+	</main>
+</body>
+</html>

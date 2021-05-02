@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="aboutus.css">
+	<link rel="stylesheet" type="text/css" href="contactus.css">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="shortcut icon" href="logo.png">
+	<title>Customize</title>
+	<script type="text/javascript">
+		// Local Storage
+		function previewMe(){
+			var canvas = document.getElementById("canvas");
+			var recipient = document.getElementById("recipient");
+			var event = document.getElementById("event");
+			var content = document.getElementById("content");
+			var day = document.getElementById("day");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var venue = document.getElementById("venue");
+
+			localStorage.setItem("canvas", canvas.value);
+			localStorage.setItem("receipient", receipient.value);
+			localStorage.setItem("event", event.value);
+			localStorage.setItem("content", content.value);
+			localStorage.setItem("day", day.value);
+			localStorage.setItem("date", date.value);
+			localStorage.setItem("time", time.value);
+			localStorage.setItem("venue", venue.value);
+			alert("All the information can be preview");
+		}
+
+	</script>
+</head>
+<body>
+<!-- Logo --> 
+	<div claas="toplogo">
+	<marquee direction="right" behavior="alternate">
+	<a class="logo"><img src="logo.png" width="100px"></a>
+	</marquee>
+
+<!-- Navigation Bar -->
+<nav>
+	</div>
+	<div class="topnav">
+		<a href="index.html" class="Home">Home</a>
+		<a href="aboutus.html" class="about">About Us</a>
+		<a href="contactus.html" class="contact">Contact Us</a>
+	</div>
+	<br>
+</nav>
+<main>
+<p>CUSTOMIZE</p>
+<br>
+<div class="container">
+<div id="canvas" style="background-image: url('bbday2.jpg')";>
+
+<div class="fill"><input id="receipient" type="text" placeholder="Your Name" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="event" type="text" placeholder="The Name of Event" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="content" type="text" placeholder="Details of the Event" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="day" type="text" placeholder="Insert Day" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="date" type="text" placeholder="Insert Date" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="time" type="text" placeholder="Insert Time (AM/PM)" size="17"></div>
+	<br>
+	<br>
+	<div class="fill"><input id="venue" type="text" placeholder="Address" size="17"></div>
+	<br>
+	<br>
+	<button onclick="previewMe()"><a href="saveWork_bbday1.html">Preview</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer>
+	<marquee direction="right" behavior="alternate">
+	<br>
+CopyRight©YourChoice2021
+</marquee>
+</body>
+</html>

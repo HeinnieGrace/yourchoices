@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="aboutus.css">
+	<link rel="stylesheet" type="text/css" href="contactus.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="shortcut icon" href="logo.png">
+	<title>Finish</title>
+	<style type="text/css">
+		body{
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			grid-template-areas: 
+				"header main";
+			margin: 0;
+			overflow: hidden;
+			font-family: serif;
+		}
+		header {
+			grid-area: header;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			background-color: darkgrey;
+			flex-direction: column;
+			align-items: center;
+			font-size: 1em;
+		}
+		#logo {
+			height: 150px;
+			width: 150px;
+			margin-top: 25px;
+			border: 1px solid;
+		}
+		header a {
+			text-decoration: none;
+			border: 1px solid #8774a4;
+			color: white;
+			background-color: #8774a4;
+			width: 90px;
+			text-align: center;
+			padding: 10px 0;
+			margin: 5px 0;
+		}
+		header a:hover {
+			background-color: #e8daed;
+			border: 1px solid #e8daed;
+			color: black;
+		}
+		#home {
+			margin-top: 30px !important;
+		}
+		main {
+			grid-area: main;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			background-color: lightgrey;
+			padding: 60px;
+		}
+		#preview {
+			height: 580px;
+			width: 400px;
+			border: 1px solid;
+			margin-right: 20px;
+			background-color: white;
+			padding: 70px;
+			text-align: center;
+		}
+		aside{
+			border: 1px solid white;
+			border-radius: 10px;
+			background-color: white;
+			padding: 10px 25px 10px 25px;
+			height: 230px;
+			width: 180px;
+			vertical-align: middle;
+			
+		}
+		#saved {
+			font-size: 1.5em;
+		}
+		#back {
+			font-size: 1em;
+		}
+		p a {
+			color: #8774a4;
+		}
+		p a:active {
+			background-color: #8774a4;
+			color: white;
+		}
+	</style>
+	<script type="text/javascript">
+		function loadMe(){
+
+			// var origin1 = document.getElementById("origin1");
+			// var origin2 = document.getElementById("origin2");
+			// var img = document.getElementById("img");
+			var recepient = document.getElementById("recepient");
+			var empty = document.getElementById("empty");
+			var description = document.getElementById("description");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var address = document.getElementById("address");
+
+			// localStorage.setItem("origin1", origin1.value);
+			// localStorage.setItem("origin2", origin2.value);
+			// localStorage.setItem("img", img.value);
+			localStorage.getItem("recepient", recepient.value);
+			localStorage.getItem("empty", empty.value);
+			localStorage.getItem("description", description.value);
+			localStorage.getItem("date", date.value);
+			localStorage.getItem("time", time.value);
+			localStorage.getItem("address", address.value);
+		}
+		function loadData(){
+
+			// var origin1 = document.getElementById("origin1");
+			// var origin2 = document.getElementById("origin2");
+			// var img = document.getElementById("img");
+			var recepient = document.getElementById("recepient");
+			var empty = document.getElementById("empty");
+			var description = document.getElementById("description");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var address = document.getElementById("address");
+
+			// localStorage.setItem("origin1", origin1.value);
+			// localStorage.setItem("origin2", origin2.value);
+			// localStorage.setItem("img", img.value);
+			recepient.value = localStorage.getItem("recepient");
+			empty.value = localStorage.getItem("empty");
+			description.value = localStorage.getItem("description");
+			date.value = localStorage.getItem("date");
+			time.value = localStorage.getItem("time");
+			address.value = localStorage.getItem("address");
+		}
+		function fillin(){
+			var recepient = document.getElementById("recepient");
+			var empty = document.getElementById("empty");
+			var description = document.getElementById("description");
+			var date = document.getElementById("date");
+			var time = document.getElementById("time");
+			var address = document.getElementById("address");
+			// origin1.innerHTML = localStorage.getItem("origin1");
+			// origin2.innerHTML = localStorage.getiItem("origin2")
+			// img.innerHTML = localStorage.getItem("img");
+			receipient.innerHTML = localStorage.getItem("recepient");
+			empty.innerHTML = localStorage.getItem("empty");
+			description.innerHTML = localStorage.getItem("description");
+			date.innerHTML = localStorage.getItem("date");
+			time.innerHTML = localStorage.getItem("time");
+			address.innerHTML = localStorage.getItem("address");
+		}
+	</script>
+</head>
+<body onload="fillin()">
+	<header>
+		<img a href="index.html" id="logo" src="logo.png">
+		<a href="index.html" id="home">Home</a>
+		<a href="aboutus.html">About Us</a>
+		<a href="contactus.html">Contact</a>
+	</header>
+	<main>
+		<div id="preview">
+		<p>To: </p>
+		<br>
+		<div><input type="text" name="recepient" id="recepient" placeholder="[ Recepient ]"></div>
+		<br>
+		<br>
+		<div id="empty" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br>
+		<br>
+		<div><input type="text" name="description" id="description" placeholder="[ Bride Names / Class of ]"></div>
+		<br>
+		<div><input type="text" name="date" id="date" placeholder="[ Date ]"></div>
+		<br>
+		<div><input type="text" name="time" id="time" placeholder="[ Time ]"></div>
+		<br>
+		<div><textarea type="text" name="address" id="address" placeholder="[ Address ]"></textarea></div>
+		<br>
+		<br>
+		<button onclick="loadData()">Load</button>
+		</div> <!-- local storage -->
+		<aside>
+			<p id="saved">Your work has been saved.</p>
+			<p id="back">Back to <a href="index.html">Homepage.</a></p>
+		</aside>
+	</main>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#canvas{
+			width: 180px;
+			height: 100px;
+			border: thin solid;
+		}
+		.choice{
+			width: 200px;
+			height: 90%;
+			padding: 20px;
+			margin: 10px;
+			box-sizing: border-box;
+		}
+	</style>
+	<script type="text/javascript">
+		function changer(value){
+			var canvas = document.getElementById("canvas");
+			if(value==1){
+				canvas.style.backgroundImage="url(4f4a6e.jpg)";
+			}
+			else if(value==2){
+				canvas.style.backgroundImage="url(242a29.jpg)";
+			}
+			else if(value==3){
+				canvas.style.backgroundImage="url(929cb0.jpg)";
+			}
+			else if(value==4){
+				canvas.style.backgroundImage="url(e8daed.jpg)";
+			}
+			canvas.style.opacity="0.5";
+		}
+
+		function changer2(value2){
+			var listValue = selectTag.options[selectTag.selectedIndex].text;
+			document.getElementById("canvas").style.fontStyle = listValue;
+		}
+
+		function changer3(value3){
+			document.getElementById("canvas").style.fontSize = "italic";
+		}
+		var text1 = document.getElementsByTagName('text1');
+		var choice = document.getElementsByClassName('choice');
+		var dragItem = null;
+
+		for (var i of input){
+			i.addEventListener('dragstart', dragstart);
+			i.addEventListener('dragstart', dragend);
+		}
+
+		function dragStart(){
+			dragItem = this;
+			setTimeout(()=>this.style.display = "none", 0);
+		}
+		function dragEnd(){
+			dragItem = this;
+			setTimeout(()=>this.style.display = "block", 0);
+			dragItem = null;
+		}
+		for (j of choice){
+			j.addEventListener('dragover', dragOver);
+			j.addEventListener('dragenter', dragEnter);
+			j.addEventListener('dragleave', dragLeave);
+			j.addEventListener('drop', Drop);
+		}
+		function Drop(){
+			this.append(dragItem);
+		}
+		function dragOver(e){
+			e.preventDefault();
+			this.style.border = "2px dotted cyan";
+		}
+		function dragEnter(e){
+			e.preventDefault();
+		}
+		function dragLeave(){
+			this.style.border = "null";
+		}
+	</script>
+</head>
+<body>
+	<p>Background Color</p>
+	<select onchange="changer(this.value)">
+		<option value="0">Please select</option>
+		<option value="1">Color 1</option>
+		<option value="2">Color 2</option>
+		<option value="3">Color 3</option>
+		<option value="4">Color 4</option>
+	</select>
+	<p>Font Style</p>
+	<select onchange="changer2(this.value2)">
+		<option>Georgia</option>
+  		<option>Times New Roman</option>
+  		<option>Arial</option>
+  		<option>Impact</option>
+  		<option>Lucida Sans Unicode</option>
+ 		 <option>Tahoma</option>
+  		<option>Verdana</option>
+  		<option>Courier New</option>
+	</select>
+	<p>Font Size</p>
+	<button type="button" onclick="changer3(this.value3)">Font Size</button>
+<div id="canvas">
+	<div class="choice">
+	<input id="text1" type="text" name="text" draggable="true">
+	<input id="text1" type="text" name="text" draggable="true">
+	<input id="text1" type="text" name="text" draggable="true">
+	<input id="text1" type="text" name="text" draggable="true">
+	</div>
+</div>
+<div id="canvas">
+	
+</div>
+</body>
+</html>
