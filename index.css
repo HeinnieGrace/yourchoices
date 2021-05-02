@@ -1,0 +1,89 @@
+<link rel="shortcut icon" href="logo.png">
+	<style type="text/css">
+		* {
+			font-family: Lucidatypewriter;
+			cursor: pointer;
+			
+		}
+		body {
+			background-color: lightgrey;
+		}
+		.topnav {
+			overflow: hidden;
+			text-align: center;
+		}
+
+		.topnav a {
+			font-size: 30px;
+			float: center;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			display: inline;
+			color: black;
+			background-color: #8774a4;
+		}
+
+		.topnav a:hover {
+			background-color: #e8daed;
+			color: black;
+		}
+
+		.topnav a.active{
+			background-color: #8774a4;
+			color: white;
+		}
+
+		.top {
+			overflow: hidden;
+		}
+
+		.top p {
+			font-size: 24px;
+			text-align: center;
+			text-shadow: 3px 3px 7px grey;
+		}
+
+		.categories {
+			font-size: 20px;
+			margin: 50px;
+			color: black;
+			justify-content: space-between;
+			overflow: hidden;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.categories p {
+			font-size: 30px;
+			font: Times New Roman;
+		}
+
+		.categories button {
+			padding: 15px 25px;
+			font-size: 24px;
+			text-align: center;
+			border: 1px solid;
+			border-radius: 10px;
+			box-shadow: 0 5px;
+		}
+
+		.categories button:hover {
+			background-color: #d1b8e0;
+		}
+
+		.categories button.active {
+			background-color: #929cb0; 
+			box-shadow: 0 5px;
+			transform: translateY(4px);
+		}
+		p{
+			font-size: 20px;
+		}
+
+		footer {
+			position: sticky;
+			color: black;
+		}
+
+	</style>
